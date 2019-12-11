@@ -6,8 +6,10 @@ from datetime import date
 from datetime import datetime
 import os.path
 
-recognizer = cv2.face.LBPHFaceRecognizer_create()
-recognizer.read('trainer/trainer.yml')
+#recognizer = cv2.face.LBPHFaceRecognizer_create()
+recognizer = cv2.face.createLBPHFaceRecognizer()
+#recognizer.read('trainer/trainer.yml')
+recognizer.load('trainer/trainer.yml')
 cascadePath = "haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascadePath);
 font = cv2.FONT_HERSHEY_SIMPLEX
@@ -45,7 +47,8 @@ while True:
 #    print( entraManha,saiMeioDia,entraNoite,saiNoite  )
 #    print ("eh horario de entrada agora? => ",ehHorarioDeEntrada)
 
-    if ( ehHorarioDeEntrada ):
+#   if ( ehHorarioDeEntrada ):
+    if ( 1 ):
         ret, img =cam.read()
         img = cv2.flip(img, 1) # Flip vertically
         gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)

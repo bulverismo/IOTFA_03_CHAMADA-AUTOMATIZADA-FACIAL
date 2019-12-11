@@ -10,16 +10,15 @@ cam.set(4, 480) # set video height
 
 face_detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
-# For each person, enter one numeric face id
+if os.path.exists('usuarios/usuarios.txt'):
+    arq = open('usuarios/usuarios.txt', 'r')
+    names = arq.read().splitlines()
+    face_id = len(names)
+else:
+    face_id = 0
 
-#if os.path.exists('usuarios/usuarios.txt'):
-#    arq = open('usuarios/usuarios.txt', 'r')
-#    names = arq.read().splitlines()
-#    face_id = len(names)
-#else:
-#    face_id = 0
-
-face_id = input('\n Digite o Id ==> ')
+# Esta linha abaixo é para colocar manualmente o id do usuario
+#face_id = input('\n Digite o Id ==> ')
 
 nome = input('\n Digite o nome do usuario e tecle ENTER ==> ')
 
