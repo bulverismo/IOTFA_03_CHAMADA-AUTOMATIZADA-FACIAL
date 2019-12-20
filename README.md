@@ -1,2 +1,2 @@
 # IOTFA_03_CHAMADA-AUTOMATIZADA-FACIAL
-# teste
+# Projeto de chamada academica via reconhecimento facial
